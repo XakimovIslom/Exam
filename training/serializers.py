@@ -20,7 +20,7 @@ class LessonSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     owner = serializers.StringRelatedField(source='owner.username')
     lessons = LessonSerializer(many=True, read_only=True)
-    lesson_user = LessonUserSerializer(many=True, read_only=True)
+    # lesson_user = LessonUserSerializer(many=True, read_only=True)
 
     class Meta:
         model = Course
