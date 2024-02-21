@@ -24,7 +24,7 @@ class Lesson(BaseModel):
 
 class LessonUser(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='lesson_users')
     time_watched = models.IntegerField(default=0)
     total_time = models.IntegerField(default=0)
 
